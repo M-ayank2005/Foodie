@@ -100,7 +100,7 @@ function About() {
           <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:mr-10 text-justify p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
             <h1 className='text-4xl font-bold tracking-wide py-5 px-5'>Our Story</h1>
             <p className="text-lg leading-relaxed px-5 pb-5">
-              Foodie  was founded with a simple idea: to make great food accessible to everyone. We started as a small kitchen with a big dream&lsquo; and over the years&lsquo; we have grown into a beloved name in the food delivery industry. Our journey has been fueled by a passion for culinary excellence and a commitment to our customers' satisfaction.
+              Foodie  was founded with a simple idea: to make great food accessible to everyone. We started as a small kitchen with a big dream&lsquo; and over the years&lsquo; we have grown into a beloved name in the food delivery industry. Our journey has been fueled by a passion for culinary excellence and a commitment to our customers&apos; satisfaction.
             </p>
           </div>
         </div>
