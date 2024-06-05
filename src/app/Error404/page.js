@@ -1,6 +1,6 @@
 import Link from 'next/link';
-// import gif from "../../../public/err.gif"; 
-
+import gif from "../../../public/err.gif"; 
+import Image from 'next/image';
 export default function Page() {
   return (
     <div className="h-screen w-full bg-yellow-600 text-gray-900">
@@ -22,7 +22,7 @@ export default function Page() {
           </div>
 
           <div className="home__img justify-self-center">
-            <Image src="/err.gif" alt="Error 404" /> 
+            <Image src={gif} alt="Error 404" /> 
           </div>
         </div>
 
