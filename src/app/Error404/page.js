@@ -11,7 +11,7 @@ export default function Page() {
             <p className="pb-2 text-5xl font-semibold lg:text-6xl">Error 404</p>
             <h1 className="pb-4 text-5xl font-bold ">Sorry Customers</h1>
             <p className="pb-8 font-semibold">
-              We can't seem to find the page <br />
+              We can&apos;t seem to find the page <br />
               you are looking for.
             </p>
             <Link legacyBehavior href="/" passHref>

@@ -75,7 +75,7 @@ const Menu = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {menuItems.map((item, index) => (
             <div key={index} className="bg-gray-300 rounded-lg shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105">
-              <Image src={item.image} alt={item.name} className="w-full h-48 object-cover" />
+              <Image src={item.image} alt={item.name} width={50} height={50} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-2">{item.name}</h2>
                 <p className="text-gray-700 mb-4">{item.description}</p>

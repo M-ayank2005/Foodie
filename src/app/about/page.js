@@ -10,7 +10,7 @@ function About() {
       <div className="mt-12 mb-10 text-6xl text-center font-bold tracking-wide">About Us</div>
       <div className="text-center mb-10 text-lg">
         <p className="text-sm text-gray-800 animate-fade-in  bg-clip-text ">
-          We are Foodie , dedicated to providing you with delicious and fresh food delivered to your doorstep with exceptional quality and service.
+          We are Foodie &lsquo; dedicated to providing you with delicious and fresh food delivered to your doorstep with exceptional quality and service.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ function About() {
           </div>
           <div className="w-full md:w-4/5 lg:w-4/5 mt-6 text-justify p-4">
             <p className="text-sm leading-relaxed">
-              Welcome to Foodie , where every meal is a celebration of taste, quality, and freshness. Our mission is to deliver the most delightful dining experience to your doorstep, ensuring that every bite is a treat to your senses.
+              Welcome to Foodie &lsquo; where every meal is a celebration of taste&lsquo; quality&lsquo; and freshness. Our mission is to deliver the most delightful dining experience to your doorstep&lsquo; ensuring that every bite is a treat to your senses.
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ function About() {
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0 lg:ml-10 text-justify p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
             <h1 className='text-4xl font-bold tracking-wide py-5 px-5'>Our Services</h1>
             <p className="text-lg leading-relaxed px-5 pb-5">
-              At Foodie , we offer a wide range of culinary delights crafted with the finest ingredients. Whether you are craving a gourmet meal, a quick snack, or a sumptuous dessert, we have got you covered. Our chefs are passionate about creating dishes that not only satisfy your hunger but also bring joy to your heart.
+              At Foodie &lsquo; we offer a wide range of culinary delights crafted with the finest ingredients. Whether you are craving a gourmet meal&lsquo; a quick snack&lsquo; or a sumptuous dessert&lsquo; we have got you covered. Our chefs are passionate about creating dishes that not only satisfy your hunger but also bring joy to your heart.
             </p>
           </div>
         </div>
@@ -64,7 +64,7 @@ function About() {
           <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:mr-10 text-justify p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
             <h1 className='text-4xl font-bold tracking-wide py-5 px-5'>Freshness Guaranteed</h1>
             <p className="text-lg leading-relaxed px-5 pb-5">
-              We believe that great food starts with great ingredients. That is why we source only the freshest produce, finest meats, and highest quality spices. Our commitment to freshness ensures that every dish we prepare is not only delicious but also nutritious and wholesome. From farm to fork, we maintain the highest standards of quality and hygiene.
+              We believe that great food starts with great ingredients. That is why we source only the freshest produce&lsquo; finest meats&lsquo; and highest quality spices. Our commitment to freshness ensures that every dish we prepare is not only delicious but also nutritious and wholesome. From farm to fork&lsquo; we maintain the highest standards of quality and hygiene.
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ function About() {
           <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:ml-10 text-justify p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
             <h1 className='text-4xl font-bold tracking-wide py-5 px-5'>Quality Taste</h1>
             <p className="text-lg leading-relaxed px-5 pb-5">
-              Taste is at the heart of everything we do. Our menu features a diverse range of dishes inspired by flavors from around the world, each meticulously crafted to tantalize your taste buds. Whether you are in the mood for something exotic or something familiar, our culinary team is dedicated to delivering an exceptional dining experience with every order.
+              Taste is at the heart of everything we do. Our menu features a diverse range of dishes inspired by flavors from around the world&lsquo; each meticulously crafted to tantalize your taste buds. Whether you are in the mood for something exotic or something familiar&lsquo; our culinary team is dedicated to delivering an exceptional dining experience with every order.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ function About() {
           <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:mr-10 text-justify p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
             <h1 className='text-4xl font-bold tracking-wide py-5 px-5'>Our Story</h1>
             <p className="text-lg leading-relaxed px-5 pb-5">
-              Foodie  was founded with a simple idea: to make great food accessible to everyone. We started as a small kitchen with a big dream, and over the years, we have grown into a beloved name in the food delivery industry. Our journey has been fueled by a passion for culinary excellence and a commitment to our customers' satisfaction.
+              Foodie  was founded with a simple idea: to make great food accessible to everyone. We started as a small kitchen with a big dream&lsquo; and over the years&lsquo; we have grown into a beloved name in the food delivery industry. Our journey has been fueled by a passion for culinary excellence and a commitment to our customers' satisfaction.
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ function About() {
           <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:ml-10 text-justify p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
             <h1 className='text-4xl font-bold tracking-wide py-5 px-5'>Our Values</h1>
             <p className="text-lg leading-relaxed px-5 pb-5">
-              At Foodie , we believe in integrity, innovation, and customer satisfaction. Our team is dedicated to upholding these values in everything we do. We are constantly exploring new ways to enhance our services and exceed your expectations. Our customers are at the heart of everything we do. Your happiness is our priority.
+              At Foodie &lsquo; we believe in integrity&lsquo; innovation&lsquo; and customer satisfaction. Our team is dedicated to upholding these values in everything we do. We are constantly exploring new ways to enhance our services and exceed your expectations. Our customers are at the heart of everything we do. Your happiness is our priority.
             </p>
           </div>
         </div>
