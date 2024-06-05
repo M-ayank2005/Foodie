@@ -22,7 +22,7 @@ export default function Page() {
           </div>
 
           <div className="home__img justify-self-center">
-            <img src="/err.gif" alt="Error 404" /> 
+            <Image src="/err.gif" alt="Error 404" /> 
           </div>
         </div>
 

@@ -1,11 +1,12 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 const Navbar = () => {
     return (
     <nav className="bg-yellow-500 p-4 pr-6 flex flex-row items-center justify-between">
       <div className="container mx-auto flex justify-between items-center">
         <div className='flex flex-row space-x-5'>
-        <img src='https://ih0.redbubble.net/image.465217072.5837/sticker,375x360-bg,ffffff.u3.png' height={10} width={25}></img>
+        <Image src='https://ih0.redbubble.net/image.465217072.5837/sticker,375x360-bg,ffffff.u3.png' height={10} width={25}/>
         <div className="text-white font-mono font-bold text-2xl">
           <Link href="/">Foodie</Link>
         </div>
