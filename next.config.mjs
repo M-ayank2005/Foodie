@@ -6,6 +6,10 @@ const nextConfig = {
       domains: ['images.unsplash.com','ih0.redbubble.net'],
       
     },
+    trailingSlash: true,
+    images: {
+      unoptimized: true,
+    },
   
 };
 

@@ -19,7 +19,7 @@ export default function Home() {
         <Carousel />
       </div>
 
-      <div className="text-bold  bg-gray-200 rounded-2xl p-3 pl-10 w-full">
+      <div className="text-bold  bg-gray-100 rounded-2xl p-3 pl-10 w-full">
         <p className="text-3xl font-bold text-left">Hot & Spicy ....</p>
       </div>
 
