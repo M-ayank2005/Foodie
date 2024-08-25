@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <div className="w-full p-5  pt-0 mt-5">
+      <div className="w-full p-5 h-2/3 pt-0 mt-5">
         <Carousel />
       </div>
 

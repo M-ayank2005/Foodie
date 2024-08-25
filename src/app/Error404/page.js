@@ -29,7 +29,7 @@ export default function Page() {
         <div className="home__footer flex items-center justify-center gap-2 self-end text-sm font-semibold">
           <p>+91-8493628282</p>
           <p>|</p>
-          <p>info@Quecto.com</p>
+          <p>info@Foodie.com</p>
         </div>
       </section>
     </div>
