@@ -8,7 +8,6 @@ import food3 from '../lib/food3.jpg';
 import food4 from '../lib/food4.jpg';
 import food5 from '../lib/food5.jpg';
 
-
 const slides = [food1, food2, food3, food4, food5];
 
 const Carousel = () => {
@@ -35,19 +34,18 @@ const Carousel = () => {
   };
 
   return (
-    <div id="default-carousel" className="relative w-full p-5" data-carousel="slide">
+    <div id="default-carousel" className="relative w-full p-5">
       {/* Carousel wrapper */}
-      <div className="relative h-56 overflow-hidden  rounded-lg md:h-96">
+      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         {slides.map((slide, index) => (
           <div
-          key={index}
-          className={`carousel-item absolute w-full transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-             <Image
+            key={index}
+            className={`absolute w-full transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
               src={slide}
-              // Replace with recommended props
               width={200} // Adjust width and height as needed
               height={550}
               alt={`Slide ${index + 1}`}
@@ -57,8 +55,8 @@ const Carousel = () => {
         ))}
       </div>
 
-      {/* Slider indicato$ */}
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reve$e">
+      {/* Slider indicators */}
+      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -68,7 +66,6 @@ const Carousel = () => {
             }`}
             aria-current={index === currentSlide ? 'true' : 'false'}
             aria-label={`Slide ${index + 1}`}
-            data-carousel-slide-to={index}
             onClick={() => goToSlide(index)}
           ></button>
         ))}
@@ -77,14 +74,12 @@ const Carousel = () => {
       {/* Slider controls */}
       <button
         type="button"
-        className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cu$or-pointer group focus:outline-none"
-        data-carousel-prev
+        className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-4 focus:ring-white">
           <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
+            className="w-4 h-4 text-white rtl:rotate-180"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 6 10"
@@ -102,14 +97,12 @@ const Carousel = () => {
       </button>
       <button
         type="button"
-        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cu$or-pointer group focus:outline-none"
-        data-carousel-next
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-4 focus:ring-white">
           <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
+            className="w-4 h-4 text-white rtl:rotate-180"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 6 10"
