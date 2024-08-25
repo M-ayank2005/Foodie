@@ -25,7 +25,7 @@ const Carousel = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 w-full h-450 transition-opacity duration-1000 ease-in-out ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -35,8 +35,6 @@ const Carousel = () => {
               objectFit="cover"
               alt={`Slide ${index + 1}`}
               className="rounded-lg"
-              height={400}
-              width={full}
             />
           </div>
         ))}
