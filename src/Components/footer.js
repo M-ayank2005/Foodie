@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-spacing-0 text-gray-500 py-8 p-5 pt-2">
+    <footer className="bg-black border-spacing-0 text-gray-500  pt-2">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <h2 className="text-2xl font-bold">Foodie </h2>
@@ -34,9 +34,10 @@ const Footer = () => {
           <Link href="/contact" className="hover:text-gray-300">Contact</Link>
           <Link href="/Error404" className="hover:text-gray-300">FAQ</Link>
         </div>
-      <div className="text-center text-gray-400 mt-4">
+      <div className="text-center text-gray-400 mt-5">
         &copy; {new Date().getFullYear()} Foodie . All rights reserved.
       </div>
+      <div className="flex flex-row justify-center mt-4 mb-0">Made with love by Mayank❤️</div>
     </footer>
   );
 };
