@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
 import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/footer";
+import Footer from "@/Components/Footer";
 import Carousel from "@/Components/Corousel";
 import Card from "@/Components/card";
 import image1 from "../lib/pizza.jpg";
