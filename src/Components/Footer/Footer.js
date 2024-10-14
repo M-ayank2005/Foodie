@@ -28,16 +28,20 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className=" flex flex-row space-x-5 justify-center m-4 md:mb-0">
-            <Link href="/about" className="hover:text-gray-300">About Us</Link>
-            <Link href="/Error404" className="hover:text-gray-300">Services</Link>
-            <Link href="/contact" className="hover:text-gray-300">Contact</Link>
-            <Link href="/Error404" className="hover:text-gray-300">FAQ</Link>
+        <div className='w-full'>
+          <div className=" flex flex-row space-x-5 justify-center m-4 md:mb-0">
+              <Link href="/about" className="hover:text-gray-300">About Us</Link>
+              <Link href="/Error404" className="hover:text-gray-300">Services</Link>
+              <Link href="/contact" className="hover:text-gray-300">Contact</Link>
+              <Link href="/Error404" className="hover:text-gray-300">FAQ</Link>
+            </div>
+          <div className="text-center text-gray-400 mt-5">
+            &copy; {new Date().getFullYear()} Foodie . All rights reserved.
           </div>
-        <div className="text-center text-gray-400 mt-5">
-          &copy; {new Date().getFullYear()} Foodie . All rights reserved.
+          <div className="flex flex-row justify-center mt-4 mb-0">
+            Made with love by Mayank❤️
+          </div>
         </div>
-        <div className="flex flex-row justify-center mt-4 mb-0">Made with love by Mayank❤️</div>
       </Section>
     </footer>
   );
