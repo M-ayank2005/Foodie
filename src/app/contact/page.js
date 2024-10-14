@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Head from 'next/head';
 import Navbar from '@/Components/Navbar';
-import Footer from '@/Components/footer';
+import Footer from '@/Components/Footer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
