@@ -21,11 +21,14 @@ export default function Home() {
         <Carousel />
       </Section>
 
-      <Section customStyle={'bg-amber-100'}>
-        <h2 className="text-3xl font-bold flex-initial w-full pb-5">
+      
+        <div className="flex flex-col items-center text-center bg-slate-200 p-3 mb-5 w-full rounded-xl justify-center">
+        <h2 className="text-3xl font-bold font-mono flex-initial w-full ">
           Hot & Spicy ....
         </h2>
-
+        </div>
+        
+        <Section customStyle={'bg-white border'}>
         <div className="mt-6 mx-auto w-full">
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <Card
