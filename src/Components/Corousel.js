@@ -20,7 +20,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div id="default-carousel" className="relative w-full max-w-6xl mx-auto p-2 my-5 mt-1 pt-0">
+    <div id="default-carousel" className="relative w-full max-w-7xl mx-auto p-2 my-5 mt-1 pt-0">
       <div className=" h-96  overflow-hidden rounded-lg shadow-xl">
         {slides.map((slide, index) => (
           <div
