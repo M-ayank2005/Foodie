@@ -15,7 +15,7 @@ const Navbar = () => {
               alt="Logo"
             />
           </div>
-          <div className="text-gray-200 font-mono font-bold text-2xl">
+          <div className="text-gray-200 mt-3 font-mono font-bold text-2xl">
             <Link href="/">Foodie</Link>
           </div>
         </div>
