@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Head from 'next/head';
@@ -27,9 +27,8 @@ const Contact = () => {
   };
 
   return (
-    
     <div>
-        <Navbar />
+      <Navbar />
       <Head>
         <title>Contact Us</title>
         <meta name="description" content="Get in touch with us" />
@@ -39,7 +38,7 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300"
+        className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-800 to-gray-900"
       >
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
@@ -53,11 +52,11 @@ const Contact = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
+          className="bg-gray-700 p-8 rounded-lg shadow-lg w-full max-w-md"
           onSubmit={handleSubmit}
         >
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+            <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="name">
               Name
             </label>
             <input
@@ -67,11 +66,11 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-600"
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -81,11 +80,11 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-600"
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+            <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="message">
               Message
             </label>
             <textarea
@@ -95,7 +94,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               rows="4"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-600"
             ></textarea>
           </div>
           <div className="flex items-center justify-between">
