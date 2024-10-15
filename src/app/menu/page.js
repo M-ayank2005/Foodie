@@ -68,18 +68,18 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-slate-800 text-white">
       <Navbar />
       <div className="w-full flex flex-col px-4 md:px-32 py-12">
         <h1 className="text-6xl text-center font-bold tracking-wide mb-12">Our Menu</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {menuItems.map((item, index) => (
-            <div key={index} className="bg-gray-300 rounded-lg shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105">
+            <div key={index} className="bg-gray-700 rounded-lg shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105">
               <Image src={item.image} alt={item.name} width={50} height={50} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-2">{item.name}</h2>
-                <p className="text-gray-700 mb-4">{item.description}</p>
-                <p className="text-lg font-semibold text-blue-600">{item.price}</p>
+                <p className="text-gray-300 mb-4">{item.description}</p>
+                <p className="text-lg font-semibold text-blue-400">{item.price}</p>
               </div>
             </div>
           ))}

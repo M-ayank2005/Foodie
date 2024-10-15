@@ -9,17 +9,14 @@ import image2 from "../lib/pizza2.jpg";
 import image3 from "../lib/fries.jpg";
 import image4 from "../lib/chow.jpg";
 import image5 from "../lib/berger.jpg";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-slate-600">
       <Navbar />
-      <div className="w-full p-5 h-2/3 pt-0 mt-5">
-        <Carousel />
-      </div>
+      <Carousel />
 
-      <div className="text-bold  bg-gray-100 rounded-2xl p-3 pl-10 w-full">
+      <div className="text-bold bg-gray-500  p-3 pl-10 w-full mt-8">
         <p className="text-3xl font-bold text-left">Hot & Spicy ....</p>
       </div>
 

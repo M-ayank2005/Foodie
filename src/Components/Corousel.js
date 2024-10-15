@@ -14,18 +14,19 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000); // Increased interval for better viewing experience
+    }, 5000); // Adjust timing for auto-slide
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div id="default-carousel" className="relative w-full max-w-6xl mx-auto p-2 my-5 mt-1 pt-0">
-      <div className=" h-96  overflow-hidden rounded-lg shadow-xl">
+    <div id="fullpage-carousel" className="relative w-full h-screen overflow-hidden">
+      {/* Slide Container */}
+      <div className="w-full h-full">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-450 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -34,13 +35,14 @@ const Carousel = () => {
               layout="fill"
               objectFit="cover"
               alt={`Slide ${index + 1}`}
-              className="rounded-lg"
+              className="w-full h-full"
             />
           </div>
         ))}
       </div>
 
-      <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+      {/* Carousel Indicators */}
+      <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-10 left-1/2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -53,51 +55,38 @@ const Carousel = () => {
         ))}
       </div>
 
+      {/* Previous Button */}
       <button
         type="button"
-        className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-1/2 left-5 z-30 transform -translate-y-1/2 bg-black/30 p-3 rounded-full hover:bg-black/50 focus:outline-none transition-all duration-300"
         onClick={() => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none transition-all duration-300">
-          <svg
-            className="w-4 h-4 text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 1 1 5l4 4"
-            />
-          </svg>
-          <span className="sr-only">Previous</span>
-        </span>
+        <svg
+          className="w-6 h-6 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
+
+      {/* Next Button */}
       <button
         type="button"
-        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-1/2 right-5 z-30 transform -translate-y-1/2 bg-black/30 p-3 rounded-full hover:bg-black/50 focus:outline-none transition-all duration-300"
         onClick={() => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none transition-all duration-300">
-          <svg
-            className="w-4 h-4 text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 9 4-4-4-4"
-            />
-          </svg>
-          <span className="sr-only">Next</span>
-        </span>
+        <svg
+          className="w-6 h-6 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+        </svg>
       </button>
     </div>
   );
