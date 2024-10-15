@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { UserAuth } from "../app/context/AuthContext";
+import DarkModeToggle from './DarkModeToggle';
 
 const Navbar = () => {
     const { user, logOut, loading } = UserAuth();
@@ -31,6 +32,7 @@ const Navbar = () => {
                     <Link href="/about" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">About</Link>
                     <Link href="/menu" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Menu</Link>
                     <Link href="/contact" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Contact</Link>
+                    <DarkModeToggle/>
                     {!loading && (
                         !user ? (
                             <Link href="/auth" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Login</Link>
