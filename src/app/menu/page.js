@@ -1,5 +1,7 @@
+"use client"
+
+
 import React from 'react';
-import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import Section from '@/Components/Section';
 import Image from 'next/image';
@@ -70,7 +72,6 @@ const menuItems = [
 const Menu = () => {
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
       <Section>
         <h1 className="text-6xl text-center font-bold tracking-wide mb-12">Our Menu</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -78,7 +79,7 @@ const Menu = () => {
             <div key={index} className="bg-gray-300 rounded-lg shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105">
               <Image src={item.image} alt={item.name} width={50} height={50} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2">{item.name}</h2>
+                <h2 className="text-2xl text-black font-bold mb-2">{item.name}</h2>
                 <p className="text-gray-700 mb-4">{item.description}</p>
                 <p className="text-lg font-semibold text-blue-600">{item.price}</p>
               </div>

@@ -29,7 +29,6 @@ const Contact = () => {
   return (
     
     <div>
-        <Navbar />
       <Head>
         <title>Contact Us</title>
         <meta name="description" content="Get in touch with us" />
