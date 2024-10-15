@@ -37,7 +37,9 @@ const Navbar = () => {
                         ) : (
                             <>
                                 <Link href="/profile" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Profile</Link>
-                                <button onClick={handleSignOut} className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Sign Out</button>
+                                <div>
+                                    <button onClick={handleSignOut} className="block mt-4 md:inline-block md:mt-0 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Out</button>
+                                </div>
                             </>
                         )
                     )}
