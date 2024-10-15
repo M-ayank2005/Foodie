@@ -9,8 +9,25 @@ import image2 from "../lib/pizza2.jpg";
 import image3 from "../lib/fries.jpg";
 import image4 from "../lib/chow.jpg";
 import image5 from "../lib/berger.jpg";
-import { useRouter } from "next/navigation";
 import Section from "@/Components/Section";
+import { motion } from "framer-motion";
+
+
+const fadeInUpAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.3,
+      duration: 1,
+    },
+  },
+};
+
 
 export default function Home() {
   return (
@@ -21,14 +38,23 @@ export default function Home() {
         <Carousel />
       </Section>
 
-      
-        <div className="flex flex-col items-center text-center bg-slate-200 p-3 mb-5 w-full rounded-xl justify-center">
-        <h2 className="text-3xl font-bold font-mono flex-initial w-full ">
-          Hot & Spicy ....
-        </h2>
-        </div>
-        
-        <Section customStyle={'bg-white border'}>
+      <Section customStyle={'bg-amber-100'}>
+
+        <motion.h1 
+        initial="hidden"
+        animate="show"
+        variants={fadeInUpAnimation}
+        className="text-4xl font-bold flex-initial w-full pb-5 text-center">
+        Experience the perfect blend of spice and satisfaction
+        </motion.h1>
+
+        <motion.p 
+       initial="hidden"
+       animate="show"
+       variants={fadeInUpAnimation}
+        className="text-lg text-gray-600 text-center w-full"> A taste sensation that will linger long after the last bite</motion.p>
+
+
         <div className="mt-6 mx-auto w-full">
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <Card
