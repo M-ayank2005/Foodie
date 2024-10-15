@@ -15,8 +15,6 @@ import Section from "@/Components/Section";
 export default function Home() {
   return (
     <main>
-      <Navbar />
-
       <Section>
         <Carousel />
       </Section>
