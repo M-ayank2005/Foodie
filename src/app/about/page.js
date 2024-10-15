@@ -11,7 +11,6 @@ function About() {
 
   return (
     <div>
-      <Navbar />
       <div className="mt-12 mb-10 text-6xl text-center font-bold tracking-wide">About Us</div>
       <div className="text-center mb-10 text-lg">
         <p className={`text-sm ${darkMode?" text-white":"text-gray-800"} animate-fade-in  bg-clip-text `}>

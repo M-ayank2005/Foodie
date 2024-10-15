@@ -2,7 +2,6 @@
 
 
 import React from 'react';
-import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import Section from '@/Components/Section';
 import Image from 'next/image';
@@ -73,7 +72,6 @@ const menuItems = [
 const Menu = () => {
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
       <Section>
         <h1 className="text-6xl text-center font-bold tracking-wide mb-12">Our Menu</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
