@@ -1,25 +1,17 @@
-'use client'
+'use client';
 import { useContext, createContext, useState, useEffect } from "react";
-import {
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, googleProvider } from './firebase'; // Import Firebase auth and Google provider
+import { signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   const googleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithPopup(auth, googleProvider);
     } catch (error) {
       console.error("Error signing in with Google: ", error);
     }
@@ -27,8 +19,11 @@ export const AuthContextProvider = ({ children }) => {
 
   const emailSignUp = async (email, password, displayName) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await userCredential.user.updateProfile({ displayName }); // Set display name
+      const result = await createUserWithEmailAndPassword(auth, email, password);
+      // Update user profile with display name if needed
+      if (result.user) {
+        setUser({ ...result.user, displayName });
+      }
     } catch (error) {
       console.error("Error signing up with email and password: ", error);
     }
@@ -36,7 +31,8 @@ export const AuthContextProvider = ({ children }) => {
 
   const emailSignIn = async (email, password) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      setUser(result.user);
     } catch (error) {
       console.error("Error signing in with email and password: ", error);
     }
@@ -45,6 +41,7 @@ export const AuthContextProvider = ({ children }) => {
   const logOut = async () => {
     try {
       await signOut(auth);
+      setUser(null);
     } catch (error) {
       console.error("Error signing out: ", error);
     }
@@ -53,7 +50,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false); // Stop loading once we have user data
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
