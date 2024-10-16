@@ -1,6 +1,5 @@
 {
   "homepage": "https://M-ayank2005.github.io/Foodie",
-
   "name": "static",
   "version": "0.1.0",
   "private": true,
@@ -9,14 +8,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-  "predeploy": "next export",
-  "deploy": "gh-pages -d out"
+    "predeploy": "next export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-lazy-load-image-component": "^1.6.2"
   },
   "devDependencies": {
     "eslint": "^8",
