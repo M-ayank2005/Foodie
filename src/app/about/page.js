@@ -1,15 +1,19 @@
+"use client"
+
 import React from 'react';
-import Footer from '../../Components/footer';
+import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbar';
 import Image from 'next/image';
+import { useDarkMode } from '../DarkModeContext';
 
 function About() {
+  const { darkMode } = useDarkMode();
+
   return (
     <div>
-      <Navbar />
       <div className="mt-12 mb-10 text-6xl text-center font-bold tracking-wide">About Us</div>
       <div className="text-center mb-10 text-lg">
-        <p className="text-sm text-gray-800 animate-fade-in  bg-clip-text ">
+        <p className={`text-sm ${darkMode?" text-white":"text-gray-800"} animate-fade-in  bg-clip-text `}>
           We are Foodie &lsquo; dedicated to providing you with delicious and fresh food delivered to your doorstep with exceptional quality and service.
         </p>
       </div>

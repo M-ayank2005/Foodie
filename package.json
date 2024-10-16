@@ -12,10 +12,13 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "firebase": "^10.14.1",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
+    "postcss": "^8",
     "react": "^18",
     "react-dom": "^18",
+    "tailwindcss": "^3.4.1",
     "react-lazy-load-image-component": "^1.6.2"
   },
   "devDependencies": {

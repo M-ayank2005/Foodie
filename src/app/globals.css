@@ -2,3 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light mode (default) */
+body {
+    @apply bg-white text-black;
+  }
+  
+  /* Dark mode */
+  .dark body {
+    @apply bg-black text-white;
+  }
+  /* Scrollbar styles (Light Mode) */
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    @apply bg-gray-600; /* Light mode thumb */
+  }
+  
+  body::-webkit-scrollbar-track {
+    @apply bg-gray-300; /* Light mode track */
+  }
+  
+  /* Scrollbar styles (Dark Mode) */
+  .dark body::-webkit-scrollbar-thumb {
+    @apply bg-white; /* Dark mode thumb */
+  }
+  
+  .dark body::-webkit-scrollbar-track {
+    @apply bg-gray-800; /* Dark mode track */
+  }
+

@@ -19,6 +19,18 @@ To get started with Foodie, follow these steps:
     ```bash
     git clone https://github.com/M-ayank2005/Foodie.git
     ```
+
+## firebase setup: 
+Create a firebase account with your google account .
+
+Go to the given link and create the api key for your project.
+
+create the .env file as specified
+
+    ```bash
+    https://console.firebase.google.com/u/0/
+    ```
+    
 2. Navigate to the project directory:
     ```bash
     cd Foodie

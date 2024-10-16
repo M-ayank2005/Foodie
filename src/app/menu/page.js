@@ -1,7 +1,7 @@
-'use client';
+"use client";
 import React from 'react';
-import Navbar from '../../Components/Navbar';
-import Footer from '../../Components/footer';
+import Footer from '../../Components/Footer';
+import Section from '@/Components/Section';
 import Image from 'next/image';
 import  {LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -70,9 +70,8 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <div className="w-full flex flex-col px-4 md:px-32 py-12">
+    <main className="min-h-screen flex flex-col">
+      <Section>
         <h1 className="text-6xl text-center font-bold tracking-wide mb-12">Our Menu</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {menuItems.map((item, index) => (
@@ -83,16 +82,17 @@ const Menu = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2">{item.name}</h2>
+                <h2 className="text-2xl text-black font-bold mb-2">{item.name}</h2>
                 <p className="text-gray-700 mb-4">{item.description}</p>
                 <p className="text-lg font-semibold text-blue-600">{item.price}</p>
               </div>
             </div>
           ))}
         </div>
-      </div>
+
+      </Section>
       <Footer />
-    </div>
+    </main>
   );
 };
 

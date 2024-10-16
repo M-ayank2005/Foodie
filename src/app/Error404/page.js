@@ -1,3 +1,6 @@
+"use client"
+
+
 import Link from 'next/link';
 import gif from "../../../public/err.gif"; 
 import Image from 'next/image';
