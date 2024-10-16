@@ -1,51 +1,25 @@
+// app/context/AuthContext.js
 'use client';
 import { useContext, createContext, useState, useEffect } from "react";
-import { auth, googleProvider } from './firebase'; // Import Firebase auth and Google provider
-import { signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+import { 
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  onAuthStateChanged
+} from 'firebase/auth';
+import { auth } from '../firebase'; 
 
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const googleSignIn = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      console.error("Error signing in with Google: ", error);
-    }
-  };
-
-  const emailSignUp = async (email, password, displayName) => {
-    try {
-      const result = await createUserWithEmailAndPassword(auth, email, password);
-      // Update user profile with display name if needed
-      if (result.user) {
-        setUser({ ...result.user, displayName });
-      }
-    } catch (error) {
-      console.error("Error signing up with email and password: ", error);
-    }
-  };
-
-  const emailSignIn = async (email, password) => {
-    try {
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      setUser(result.user);
-    } catch (error) {
-      console.error("Error signing in with email and password: ", error);
-    }
-  };
-
-  const logOut = async () => {
-    try {
-      await signOut(auth);
-      setUser(null);
-    } catch (error) {
-      console.error("Error signing out: ", error);
-    }
-  };
+  const router = useRouter();
+  const googleProvider = new GoogleAuthProvider();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -54,6 +28,62 @@ export const AuthContextProvider = ({ children }) => {
     });
     return () => unsubscribe();
   }, []);
+
+  const googleSignIn = async () => {
+    setLoading(true);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      console.log("Google Sign-In Successful", result.user);
+      router.push('/');
+    } catch (error) {
+      console.error("Error signing in with Google: ", error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const emailSignUp = async (email, password, displayName) => {
+    setLoading(true);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, { displayName });
+      setUser({ ...userCredential.user, displayName });
+      router.push('/');
+    } catch (error) {
+      console.error("Error signing up with email and password: ", error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const emailSignIn = async (email, password) => {
+    setLoading(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push('/home');
+    } catch (error) {
+      console.error("Error signing in with email and password: ", error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const logOut = async () => {
+    setLoading(true);
+    try {
+      await signOut(auth);
+      setUser(null);
+      router.push('/');
+    } catch (error) {
+      console.error("Error signing out: ", error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <AuthContext.Provider value={{ user, googleSignIn, emailSignUp, emailSignIn, logOut, loading }}>

@@ -35,12 +35,12 @@ const Navbar = () => {
                     <DarkModeToggle/>
                     {!loading && (
                         !user ? (
-                            <Link href="/auth" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Login</Link>
+                            <Link href="/LoginPage" className="block block  md:inline-block md:mt-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Login</Link>
                         ) : (
                             <>
-                                <Link href="/profile" className="block mt-4 md:inline-block md:mt-0 hover:text-gray-300">Profile</Link>
+                                <Link href="/profile" className="block block  md:inline-block md:mt-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Profile</Link>
                                 <div>
-                                    <button onClick={handleSignOut} className="block mt-4 md:inline-block md:mt-0 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Out</button>
+                                    <button onClick={handleSignOut} className="block  md:inline-block md:mt-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Sign Out</button>
                                 </div>
                             </>
                         )
