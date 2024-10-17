@@ -46,7 +46,16 @@ export const AuthContextProvider = ({ children }) => {
   const emailSignUp = async (email, password, displayName) => {
     setLoading(true);
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      //-------------signup page for firebase----------
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password,
+          displayName
+        );
+        const user = userCredential.user;
+        console.log("User signed up:", user);
+
       await updateProfile(userCredential.user, { displayName });
       setUser({ ...userCredential.user, displayName });
       router.push('/');
@@ -61,8 +70,17 @@ export const AuthContextProvider = ({ children }) => {
   const emailSignIn = async (email, password) => {
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      router.push('/home');
+      //------signin code for firebase ----------
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        const user = userCredential.user;
+        console.log("User signed in:", user);
+
+
+      router.push('/');
     } catch (error) {
       console.error("Error signing in with email and password: ", error);
       throw error;
