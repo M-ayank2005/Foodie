@@ -1,9 +1,9 @@
 // app/components/AuthForm.jsx
-'use client';
+"use client";
 import React, { useState } from "react";
-import { HiEye, HiEyeOff } from 'react-icons/hi';
-import { FcGoogle } from 'react-icons/fc';
-import { UserAuth } from '../app/context/AuthContext';
+import { HiEye, HiEyeOff } from "react-icons/hi";
+import { FcGoogle } from "react-icons/fc";
+import { UserAuth } from "../app/context/AuthContext";
 
 const AuthForm = () => {
   const { googleSignIn, emailSignUp, emailSignIn, loading } = UserAuth();
@@ -15,23 +15,28 @@ const AuthForm = () => {
   const [error, setError] = useState("");
 
   const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{7,}$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!?])[A-Za-z\d@#$%^&*!?]{7,}$/;
     return passwordRegex.test(password);
   };
+  
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     if (!validatePassword(password)) {
-      setError("Password must be at least 7 characters long, contain at least 1 capital letter, and at least 1 number.");
+      setError(
+        "Password must be at least 7 characters long, contain at least 1 capital letter, and at least 1 number."
+      );
       return;
     }
 
     try {
       if (isSignUp) {
         await emailSignUp(email, password, displayName);
-      } else {
+      } 
+      else {
         await emailSignIn(email, password);
       }
     } catch (error) {
@@ -50,13 +55,13 @@ const AuthForm = () => {
   return (
     <div className="space-y-6">
       {/* Form Header */}
-      <div className="space-y-2">
+      <div className="space-y-2 ">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900">
           {isSignUp ? "Create Account" : "Sign In"}
         </h2>
         <p className="text-sm text-gray-500">
-          {isSignUp 
-            ? "Join us today and start your journey" 
+          {isSignUp
+            ? "Join us today and start your journey"
             : "Welcome back! Please enter your details"}
         </p>
       </div>
@@ -72,7 +77,10 @@ const AuthForm = () => {
       <form onSubmit={handleSubmit} className="space-y-4">
         {isSignUp && (
           <div className="space-y-1">
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700"
+            >
               Username
             </label>
             <input
@@ -88,7 +96,10 @@ const AuthForm = () => {
         )}
 
         <div className="space-y-1">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700"
+          >
             Email
           </label>
           <input
@@ -103,7 +114,10 @@ const AuthForm = () => {
         </div>
 
         <div className="space-y-1">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-gray-700"
+          >
             Password
           </label>
           <div className="relative">
@@ -130,7 +144,8 @@ const AuthForm = () => {
             </button>
           </div>
           <p className="mt-1 text-xs text-gray-500">
-            Password must be at least 7 characters with 1 capital letter and 1 number
+            Password must be at least 7 characters with 1 capital letter and 1
+            number
           </p>
         </div>
 
@@ -144,8 +159,10 @@ const AuthForm = () => {
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
               Processing...
             </>
+          ) : isSignUp ? (
+            "Create Account"
           ) : (
-            isSignUp ? "Create Account" : "Sign In"
+            "Sign In"
           )}
         </button>
       </form>

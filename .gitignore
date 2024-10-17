@@ -6,13 +6,12 @@
 .pnp.js
 .yarn/install-state.gz
 
-
 # testing
 /coverage
 
 # next.js
 /.next/
-/out/
+ /out/
 
 # production
 /build
@@ -27,6 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 .env.local
 
