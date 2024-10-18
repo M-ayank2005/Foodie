@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Card = ({ imageSrc, title, description, link }) => {
   return (
     <Link href={link} legacyBehavior>
-      <a className="block w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300">
+      <a className="mb-6 block w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300">
         <Image
           src={imageSrc}
           alt={title}

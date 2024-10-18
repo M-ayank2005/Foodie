@@ -14,6 +14,7 @@ import { useDarkMode } from "./DarkModeContext";
 
 export default function Home() {
   const { darkMode } = useDarkMode();
+  console.log(darkMode);
 
   return (
     <main>
@@ -21,48 +22,47 @@ export default function Home() {
         <Carousel />
       </Section>
 
-      
-        <div className={`flex flex-col items-center text-center ${darkMode?" bg-gray-700":"bg-slate-200"} p-3 mb-5 w-full rounded-xl justify-center`}>
-        <h2 className={`text-3xl font-bold font-mono flex-initial w-full`}>
+      <div className={`flex flex-col items-center text-center ${darkMode ? "bg-gray-700" : "bg-slate-200"} p-3 mb-5 w-full rounded-xl justify-center`}>
+  <h2 className={`text-3xl font-bold font-mono flex-initial w-full ${darkMode ? "text-white" : "text-black"}`}>
           Hot & Spicy ....
         </h2>
-        </div>
-        
-        <Section customStyle={`${ darkMode?" bg-black":"bg-white"}`}>
+      </div>
+
+      <Section customStyle={`${darkMode ? " bg-black" : "bg-white"}`}>
         <div className={`mt-6 mx-auto w-full`}>
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              <Card
-                imageSrc={image1}
-                title="Delicious Pizza"
-                description="A tasty pizza with fresh ingredients."
-                link="/pizza"
-              />
-              <Card
-                imageSrc={image2}
-                title="Delicious Burger"
-                description="A tasty burger with fresh ingredients."
-                link="/burger"
-              />
-              <Card
-                imageSrc={image3}
-                title="Tasty French Fries"
-                description="Tasty french fries with fresh ingredients."
-                link="/fries"
-              />
-              <Card
-                imageSrc={image4}
-                title="Delicious Chowmein"
-                description="A tasty chowmein made with fresh ingredients."
-                link="/chowmein"
-              />
-              <Card
-                imageSrc={image5}
-                title="Delicious Burger"
-                description="A tasty burger with fresh ingredients."
-                link="/burger"
-              />
-            </div>
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <Card
+              imageSrc={image1}
+              title="Delicious Pizza"
+              description="A tasty pizza with fresh ingredients."
+              link="/pizza"
+            />
+            <Card
+              imageSrc={image2}
+              title="Delicious Burger"
+              description="A tasty burger with fresh ingredients."
+              link="/burger"
+            />
+            <Card
+              imageSrc={image3}
+              title="Tasty French Fries"
+              description="Tasty french fries with fresh ingredients."
+              link="/fries"
+            />
+            <Card
+              imageSrc={image4}
+              title="Delicious Chowmein"
+              description="A tasty chowmein made with fresh ingredients."
+              link="/chowmein"
+            />
+            <Card
+              imageSrc={image5}
+              title="Delicious Burger"
+              description="A tasty burger with fresh ingredients."
+              link="/burger"
+            />
           </div>
+        </div>
       </Section>
       <Footer />
     </main>

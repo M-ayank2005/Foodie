@@ -6,12 +6,18 @@ const DarkModeContext = createContext();
 export const useDarkMode = () => useContext(DarkModeContext);
 
 export const DarkModeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("darkMode") === "true";
+  const [darkMode, setDarkMode] = useState(false); 
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+
+    if (savedMode !== null) {
+      setDarkMode(savedMode === "true");
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setDarkMode(prefersDark);
     }
-    return false; // Default to false during SSR
-  });
+  }, []);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -23,9 +29,7 @@ export const DarkModeProvider = ({ children }) => {
     localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-  };
+  const toggleDarkMode = () => setDarkMode((prevMode) => !prevMode);
 
   return (
     <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
