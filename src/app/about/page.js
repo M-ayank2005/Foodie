@@ -126,12 +126,45 @@ function About() {
             </p>
           </div>
         </div>
-
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-700">Thank you for choosing Foodie. We look forward to serving you!</p>
+        <h1 className='text-4xl font-bold tracking-wide py-5 px-5 text-center'>Meet Our Happy Customers</h1>
+<div className="flex flex-row items-center justify-center w-full ">
+    <div className="flex flex-col items-center w-full lg:w-1/3 border rounded-lg shadow-md mx-4">
+        <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:mr-10 ml-10 text-center p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
+            <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style={{borderRadius: '50%', width: '200px', height: '200px', objectFit: 'cover', marginTop:'10px'}} alt="Circular Image"/>
+            <p className="text-lg leading-relaxed pb-5 text-center">
+            "I love ordering from Foodie! The variety of food options is fantastic, and everything tastes amazing. They never disappoint in terms of flavor, freshness, and presentation. Plus, the delivery is super quick. Can't recommend them enough!"
+            </p>
+            <p >Jessica L.</p>
         </div>
+    </div>
+    <div className="flex flex-col items-center w-full lg:w-1/3 border rounded-lg shadow-md mx-4">
+        <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:mr-10 ml-10 text-center p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
+            <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style={{borderRadius: '50%', width: '200px', height: '200px', objectFit: 'cover', marginTop:'10px'}} alt="Circular Image"/>
+
+            <p className="text-lg leading-relaxed pb-5 text-center">
+           "Foodie has become my go-to for fresh and tasty meals. The food is always delivered hot, and the quality is top-notch. Their service is friendly and reliable, and I appreciate how fast the delivery is. The ingredients always taste fresh."
+            </p>
+            <p >Michael P.</p>
+        </div>
+    </div>
+    <div className="flex flex-col items-center w-full lg:w-1/3 border rounded-lg shadow-md mx-4">
+        <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:mr-10 ml-10 text-center p-4 lg:p-0 border lg:border-none rounded-lg lg:rounded-none">
+            <img src="https://images.pexels.com/photos/5418319/pexels-photo-5418319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style={{borderRadius: '50%', width: '200px', height: '200px', objectFit: 'cover', marginTop:'10px'}} alt="Circular Image"/>
+            <p className="text-lg leading-relaxed pb-5 text-center">
+            "I’m blown away by how consistently great the food from Foodie is. Every dish I've tried has been flavorful and feels like it’s made with care. The delivery is always on time, and the packaging keeps everything fresh. A+ for both taste and service!"
+            </p>
+            <p >Melissa P.</p>
+        </div>
+    </div>
+</div>
+
+<div className="flex justify-center mt-12">
+    <p className="text-lg text-gray-700">Thank you for choosing Foodie. We look forward to serving you!</p>
+</div>
+
         
       </div>
+    
       <Footer />
     </div>
   );
