@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 import { UserAuth } from "../app/context/AuthContext";
-
+import {useDarkMode } from "../app/DarkModeContext"
+ 
 const AuthForm = () => {
+  const { darkMode } = useDarkMode();
+
   const { googleSignIn, emailSignUp, emailSignIn, loading } = UserAuth();
   const [isSignUp, setIsSignUp] = useState(true);
   const [email, setEmail] = useState("");
@@ -56,10 +59,10 @@ const AuthForm = () => {
     <div className="space-y-6">
       {/* Form Header */}
       <div className="space-y-2 ">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+        <h2 className={`text-3xl font-bold tracking-tight ${darkMode?"text-white":"text-gray-700"}`}>
           {isSignUp ? "Create Account" : "Sign In"}
         </h2>
-        <p className="text-sm text-gray-500">
+        <p className={`text-sm ${darkMode?"text-white":"text-gray-700"}`}>
           {isSignUp
             ? "Join us today and start your journey"
             : "Welcome back! Please enter your details"}
@@ -79,7 +82,7 @@ const AuthForm = () => {
           <div className="space-y-1">
             <label
               htmlFor="username"
-              className="block text-sm font-medium text-gray-700"
+              className={`block text-sm font-medium ${darkMode?"text-white":"text-gray-700"} text-gray-700`}
             >
               Username
             </label>
@@ -95,10 +98,10 @@ const AuthForm = () => {
           </div>
         )}
 
-        <div className="space-y-1">
+        <div className="space-y-1 ">
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className={`mt-6 block text-sm font-medium ${darkMode?"text-white":"text-gray-700"} `}
           >
             Email
           </label>
@@ -116,7 +119,7 @@ const AuthForm = () => {
         <div className="space-y-1">
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
+            className={`mt-6 block text-sm font-medium ${darkMode?"text-white":"text-gray-700"}`}
           >
             Password
           </label>
@@ -173,7 +176,7 @@ const AuthForm = () => {
           <div className="w-full border-t border-gray-300"></div>
         </div>
         <div className="relative flex justify-center text-sm">
-          <span className="px-2 bg-white text-gray-500">Or continue with</span>
+          <span className={`px-2 ${darkMode?"bg-gray-600 text-white":"bg-white text-gray-500"}`}>Or continue with</span>
         </div>
       </div>
 
@@ -184,16 +187,16 @@ const AuthForm = () => {
         className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white text-gray-700 hover:bg-gray-50 transition-colors duration-200 space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <FcGoogle className="w-5 h-5" />
-        <span>Google</span>
+        <span>{isSignUp ? "Sign Up" : "Sign In"} with Google</span>
       </button>
 
       {/* Toggle Sign In/Up */}
-      <p className="text-center text-sm text-gray-600">
+      <p className={`text-center text-sm ${darkMode?"text-white":"text-gray-700"}`}>
         {isSignUp ? "Already have an account?" : "Don't have an account?"}
         <button
           onClick={() => setIsSignUp(!isSignUp)}
           type="button"
-          className="ml-1 text-blue-600 hover:text-blue-700 font-medium"
+          className={`ml-1 ${darkMode?"text-yellow-300 hover:text-yellow-500":"text-blue-600 hover:text-blue-700 "}  font-medium`}
         >
           {isSignUp ? "Sign In" : "Sign Up"}
         </button>

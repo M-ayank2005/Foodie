@@ -4,7 +4,11 @@
 import Link from 'next/link';
 import gif from "../../../public/err.gif"; 
 import Image from 'next/image';
+import {useDarkMode} from '../DarkModeContext'
 export default function Page() {
+  const { darkMode } = useDarkMode();
+  console.log(darkMode);
+
   return (
     <div className="h-screen w-full bg-yellow-600 text-gray-900">
       
