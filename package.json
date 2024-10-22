@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "firebase": "^10.14.1",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.453.0",
