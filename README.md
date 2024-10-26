@@ -39,6 +39,10 @@ create the .env file as specified
     ```bash
     npm install
     ```
+4. Install Email Js dependencies:
+     ```bash
+    npm @emailjs/browser
+    ```
 4. Start the development server:
     ```bash
     npm run dev
