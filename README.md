@@ -19,33 +19,6 @@ To get started with Foodie, follow these steps:
     ```bash
     git clone https://github.com/M-ayank2005/Foodie.git
     ```
-# EmailJS Setup Instructions
-
-This document outlines the steps to set up EmailJS for sending emails in your application.
-
-## Step 1: Create an EmailJS Account
-1. Visit [EmailJS](https://www.emailjs.com/) and sign up for an account using your email.
-
-## Step 2: Create an Email Service
-1. After logging in, navigate to the **"Email Services"** section from the dashboard.
-2. Select your email provider Gmail and follow the prompts to connect your account.
-3. Once connected, you will receive a **Service ID**. Make a note of this for later use.
-
-## Step 3: Create an Email Template
-1. Go to the **"Email Templates"** section in the dashboard.
-2. Click on **"Create New Template"**.
-3. Copy and paste the following HTML code into the email editor, replacing the recipient's email in the "To Email" field with your own:
-
-   ```html
-   <p>Hello Mayank,</p>
-   <p>You have received a new Contact Request</p>
-   <p>User Name: {{name}}</p>
-   <p>User Email: <span style="color: #555; font-weight: bold;">{{email}}</span></p>
-   <p>User Message:</p>
-   <div style="padding: 12px; border-left: 4px solid #4CAF50; font-style: italic; background-color: #f9f9f9; margin: 10px 0; color: #333;">
-     {{message}}
-   </div>
-   <p style="font-size: 14px; color: #666;">Best wishes,<br>Foodie Team</p>
 
 ## firebase setup: 
 Create a firebase account with your google account .
