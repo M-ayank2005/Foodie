@@ -17,7 +17,6 @@ export default function Page() {
     >
       <section className='home grid h-screen pt-32 pb-16'>
         <div className='home__container container grid content-center gap-12 lg:max-w-5xl lg:grid-cols-2 lg:items-center'>
-          {/* Error Message Section */}
           <div className='home__data justify-self-center text-center lg:text-left'>
             <p className='pb-2 text-5xl font-semibold lg:text-6xl'>Error 404</p>
             <h1 className='pb-4 text-5xl font-bold'>Sorry, Customers</h1>
@@ -26,24 +25,18 @@ export default function Page() {
               you are looking for.
             </p>
             <Link legacyBehavior href='/' passHref>
-              <a className='inline-flex items-center justify-center rounded-full bg-gray-900 py-4 px-8 font-bold text-white transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700'>
+              <a className='inline-flex items-center justify-center rounded-full bg-gray-900 py-4 px-8 font-bold text-white transition duration-300 transform hover:scale-105 hover:bg-gray-700'>
                 Go Home
               </a>
             </Link>
           </div>
 
-          {/* Error Image Section */}
           <div className='home__img justify-self-center p-4'>
-            <Image
-              src={gif}
-              alt='Error 404'
-              className='max-w-xs md:max-w-sm mx-auto'
-            />
+            <Image src={gif} alt='Error 404' className='max-w-xs md:max-w-sm' />
           </div>
         </div>
 
-        {/* Footer Section */}
-        <div className='home__footer flex items-center justify-center gap-4 self-end text-sm font-semibold text-gray-700 dark:text-gray-400 mt-12'>
+        <div className='home__footer flex items-center justify-center gap-4 self-end text-sm font-semibold text-gray-700 dark:text-gray-400'>
           <p className='flex items-center gap-1'>
             <span role='img' aria-label='phone'>
               📞
