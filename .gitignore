@@ -18,7 +18,7 @@
 
 # misc
 .DS_Store
-*.pem
+*.pem``
 
 # debug
 npm-debug.log*
@@ -36,3 +36,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#firebase.js
+/src/app/firebase.js

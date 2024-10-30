@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div
       className={`h-screen w-full ${
-        darkMode ? 'bg-gray-900 text-white' : 'bg-yellow-600 text-gray-900'
+        darkMode ? 'bg-gray-900 text-white' : 'bg-white-600 text-gray-900'
       }`}
     >
       <section className='home grid h-screen pt-32 pb-16'>
