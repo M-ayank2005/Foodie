@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* public/css/globals.css */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
 /* Light mode (default) */
 body {
     @apply bg-white text-black;
@@ -45,4 +50,62 @@ body {
   50% {
     opacity: 0;
   }
+}
+
+.typingText {
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 3px solid transparent;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.typingDescription {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid transparent;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* styles/CustomerReviewCarousel.module.css */
+
+.carousel-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.review-slide {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.review-slide h3 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.review-slide p {
+  font-size: 1.1rem;
+  color: #333;
 }

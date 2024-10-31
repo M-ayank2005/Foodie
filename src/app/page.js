@@ -12,6 +12,7 @@ import image5 from '../lib/berger.jpg'
 import Section from '@/Components/Section'
 import { useDarkMode } from './DarkModeContext'
 import './globals.css' // Import the CSS file where we'll define the blinking cursor class
+import CustomerReviewCarousel from '@/Components/CustomerReviewCarousel'
 
 export default function Home() {
   const { darkMode } = useDarkMode()
@@ -124,6 +125,12 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
+      <Section>
+        
+        <CustomerReviewCarousel />
+      </Section>
+
       <Footer />
     </main>
   )
