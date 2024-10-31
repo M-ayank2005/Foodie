@@ -32,7 +32,7 @@ function About() {
           </div>
           <div className="w-full md:w-4/5 lg:w-4/5 mt-6 text-justify p-4">
             <p className="text-sm leading-relaxed">
-              Welcome to Foodie &lsquo; where every meal is a celebration of taste&lsquo; quality&lsquo; and freshness. Our mission is to deliver the most delightful dining experience to your doorstep&lsquo; ensuring that every bite is a treat to your senses.
+              Welcome to Foodie, where every meal is a celebration of taste&lsquo; quality&lsquo; and freshness. Our mission is to deliver the most delightful dining experience to your doorstep&lsquo; ensuring that every bite is a treat to your senses.
             </p>
           </div>
         </div>

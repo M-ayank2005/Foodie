@@ -11,45 +11,59 @@ import image4 from '../lib/chow.jpg'
 import image5 from '../lib/berger.jpg'
 import Section from '@/Components/Section'
 import { useDarkMode } from './DarkModeContext'
+import './globals.css' // Import the CSS file where we'll define the blinking cursor class
+import CustomerReviewCarousel from '@/Components/CustomerReviewCarousel'
 
 export default function Home() {
   const { darkMode } = useDarkMode()
 
   // List of attributes
   const attributes = [
-    'Delicious',
-    'Savory',
-    'Crunchy',
-    'Juicy',
-    'Flavorful',
-    'Mouthwatering',
-    'Cheesy',
-    'Spicy',
-    'Tender',
-    'Zesty',
-    'Sweet',
-    'Hearty',
-    'Fresh',
-    'Decadent',
-    'Satisfying',
-    'Rich',
-    'Classic',
+    'Adventurous',
+    'Gourmet',
+    'Sweet-Toothed',
+    'Savory-Lover',
+    'Spice Enthusiast',
+    'Local Foodie',
+    'Health-Conscious',
+    'Vegan',
   ]
 
-  const [currentAttribute, setCurrentAttribute] = useState(attributes[0])
+  const [currentAttribute, setCurrentAttribute] = useState('')
   const [index, setIndex] = useState(0)
+  const [typing, setTyping] = useState(true)
+  const [charIndex, setCharIndex] = useState(0)
+  const [isPausing, setIsPausing] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % attributes.length) // Loop through the attributes
-    }, 2000) // Change every 2 seconds
+    let timeout
 
-    return () => clearInterval(interval)
-  }, [attributes.length])
+    if (typing) {
+      if (charIndex < attributes[index].length) {
+        timeout = setTimeout(() => {
+          setCurrentAttribute((prev) => prev + attributes[index][charIndex])
+          setCharIndex((prev) => prev + 1)
+        }, 100)
+      } else {
+        setTyping(false)
+        setIsPausing(true)
+        timeout = setTimeout(() => setIsPausing(false), 0) // Pause after typing
+      }
+    } else if (!typing && !isPausing) {
+      if (charIndex > 0) {
+        timeout = setTimeout(() => {
+          setCurrentAttribute((prev) => prev.slice(0, -1))
+          setCharIndex((prev) => prev - 1)
+        }, 150) // Detyping speed
+      } else {
+        setTyping(true)
+        setIndex((prevIndex) => (prevIndex + 1) % attributes.length)
+      }
+    }
 
-  useEffect(() => {
-    setCurrentAttribute(attributes[index]) // Update the displayed attribute
-  }, [index, attributes])
+    return () => clearTimeout(timeout)
+  }, [typing, charIndex, index, isPausing])
+
 
   return (
     <main>
@@ -68,10 +82,11 @@ export default function Home() {
           }`}
           style={{ marginBottom: '5px' }}
         >
-          Are You A {currentAttribute} Foodie ?
+          Are You A {currentAttribute}
+          <span className='blinking-cursor'>|</span> Foodie?
         </h2>
 
-        <h3 style={{ fontfamily: "monospace" }}>We have got you covered!</h3>
+        <h3 style={{ fontFamily: 'monospace' }}>We have got you covered!</h3>
       </div>
 
       <Section customStyle={`${darkMode ? 'bg-black' : 'bg-white'}`}>
@@ -110,6 +125,12 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
+      <Section>
+        
+        <CustomerReviewCarousel />
+      </Section>
+
       <Footer />
     </main>
   )
