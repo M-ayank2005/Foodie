@@ -109,3 +109,17 @@ body {
   font-size: 1.1rem;
   color: #333;
 }
+.blinking-underscore {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+

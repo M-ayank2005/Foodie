@@ -64,7 +64,6 @@ export default function Home() {
     return () => clearTimeout(timeout)
   }, [typing, charIndex, index, isPausing])
 
-
   return (
     <main>
       <Section>
@@ -127,7 +126,6 @@ export default function Home() {
       </Section>
 
       <Section>
-        
         <CustomerReviewCarousel />
       </Section>
 
