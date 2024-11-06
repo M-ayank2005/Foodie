@@ -56,7 +56,7 @@ const CustomerReviewCarousel = () => {
       <Slider {...settings}>
         {reviews.map((review, index) => (
           <div key={index} className='review-slide'>
-            <p>"{review.review}"</p>
+            <p>&quot;{review.review}&quot;</p>
             <h3
               style={{
                 color: '#322',
